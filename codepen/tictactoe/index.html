@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tic Tac Toe</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <main class="tictactoe">
+
+    <!-- Notification -->
+    <section class="alert"></section>
+
+    <!-- Game board -->
+    <section class="board">
+      <div id="cell-1" class="cell b-rb"></div>
+      <div id="cell-2" class="cell b-no-t"></div>
+      <div id="cell-3" class="cell b-bl"></div>
+      <div id="cell-4" class="cell b-no-l"></div>
+      <div id="cell-5" class="cell b"></div>
+      <div id="cell-6" class="cell b-no-r"></div>
+      <div id="cell-7" class="cell b-tr"></div>
+      <div id="cell-8" class="cell b-no-b"></div>
+      <div id="cell-9" class="cell b-lt"></div>
+    </section>
+
+    <!-- Info -->
+    <section class="info">
+
+      <!-- Scores -->
+      <section class="scores">
+
+        <!-- X -->
+        <div class="score">
+          <span class="score-label">Player X</span>
+          <span class="score-value score-x"></span>
+        </div>
+
+        <!-- O -->
+        <div class="score">
+          <span class="score-label">Player O</span>
+          <span class="score-value score-o"></span>
+        </div>
+
+        <!-- Turn -->
+        <div class="turn">
+          <span class="turn-label">Turn</span>
+          <span class="turn-value"></span>
+        </div>
+
+      </section>
+
+      <!-- Reset -->
+      <section class="actions">
+        <button class="reset-game">
+          Reset
+        </button>
+      </section>
+
+    </section><!-- /Info -->
+
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
