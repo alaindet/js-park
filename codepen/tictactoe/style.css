@@ -1,106 +1,53 @@
 body {
-  font-size: 16px;
-  font-family: Helvetica, sans-serif;
-}
-.tictactoe {
-  display: flex;
-  flex-direction: column;
-}
-.board {
-  width: 20rem;
-  height: 20rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-}
-.info {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.info .scores,
-.info .actions {
-  padding: 1rem;
+    font-family: verdana;
+    font-size: 16px;
 }
 .cell {
-  width: calc(33.33% - 8px);
-  height: calc(33.33% - 8px);
-  font-size: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+    cursor: pointer;
+    border: 0.5rem solid #808080;
+    padding: 0.3rem;
+    width: 1em!important;
+    line-height:1em!important;
+    height: 1em!important;
+    font-size: 5em;
+    text-align: center;
 }
-.score-label,
-.turn-label {
-  width: 10rem;
+#cell-1, #cell-2, #cell-3 {
+    border-top: none;
 }
-.score-value,
-.turn-value {
-  font-family: monospace;
-  width: 3rem;
+#cell-3, #cell-6, #cell-9 {
+    border-right: none;
 }
-
-/* Colors */
-
-.cell:hover {
-  background-color: #f0f0f0;
+#cell-7, #cell-8, #cell-9 {
+    border-bottom: none;
 }
-.x {
-  color: #0984e3;
-}
-.cell-x-hover:hover {
-  background-color: #cde6f9;
+#cell-1, #cell-4, #cell-7 {
+    border-left: none;
 }
 .o {
-  color: #d63031;
+    color: #d6325c;
 }
-.cell-o-hover:hover {
-  background-color: #f6d5d5;
+.x {
+    color: #61688b;
 }
-
-
-/* Borders */
-
-/* 4 sides */
-.b {
-  border: 5px solid #ccc;
+.gameboard {
+    cellspacing: 0;
+    border-collapse: collapse;
+    text-align: center;
+    vertical-align: middle;
 }
-
-/* 3 sides */
-.b-no-t {
-  border: 5px solid #ccc;
-  border-top: 0;
+.scoreboard {
+    padding: 0.5rem;
 }
-.b-no-r {
-  border: 5px solid #ccc;
-  border-right: 0;
+.player, .reset {
+    font-size: 1.5rem;
 }
-.b-no-b {
-  border: 5px solid #ccc;
-  border-bottom: 0;
+.reset {
+    border-radius: 0.3rem;
+    background: #f0f0f0;
+    border: 2px solid #a0a0a0;
+    cursor: pointer;
 }
-.b-no-l {
-  border: 5px solid #ccc;
-  border-left: 0;
-}
-
-/* 2 sides (corners) */
-.b-tr {
-  border-top: 5px solid #ccc;
-  border-right: 5px solid #ccc;
-}
-.b-rb {
-  border-right: 5px solid #ccc;
-  border-bottom: 5px solid #ccc;
-}
-.b-bl {
-  border-bottom: 5px solid #ccc;
-  border-left: 5px solid #ccc;
-}
-.b-lt {
-  border-left: 5px solid #ccc;
-  border-top: 5px solid #ccc;
+.reset:hover {
+    background: rgba(255,255,255,0.5);
 }

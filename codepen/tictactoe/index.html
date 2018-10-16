@@ -1,67 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Tic Tac Toe</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tic Tac Toe</title>
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <main class="tictactoe">
-
-    <!-- Notification -->
-    <section class="alert"></section>
-
-    <!-- Game board -->
-    <section class="board">
-      <div id="cell-1" class="cell b-rb"></div>
-      <div id="cell-2" class="cell b-no-t"></div>
-      <div id="cell-3" class="cell b-bl"></div>
-      <div id="cell-4" class="cell b-no-l"></div>
-      <div id="cell-5" class="cell b"></div>
-      <div id="cell-6" class="cell b-no-r"></div>
-      <div id="cell-7" class="cell b-tr"></div>
-      <div id="cell-8" class="cell b-no-b"></div>
-      <div id="cell-9" class="cell b-lt"></div>
-    </section>
-
-    <!-- Info -->
-    <section class="info">
-
-      <!-- Scores -->
-      <section class="scores">
-
-        <!-- X -->
-        <div class="score">
-          <span class="score-label">Player X</span>
-          <span class="score-value score-x"></span>
-        </div>
-
-        <!-- O -->
-        <div class="score">
-          <span class="score-label">Player O</span>
-          <span class="score-value score-o"></span>
-        </div>
-
-        <!-- Turn -->
-        <div class="turn">
-          <span class="turn-label">Turn</span>
-          <span class="turn-value"></span>
-        </div>
-
-      </section>
-
-      <!-- Reset -->
-      <section class="actions">
-        <button class="reset-game">
-          Reset
-        </button>
-      </section>
-
-    </section><!-- /Info -->
-
+  <main id="tictactoe">
+    <table class="gameboard">
+      <tr>
+        <td class="cell" id="cell-1"></td>
+        <td class="cell" id="cell-2"></td>
+        <td class="cell" id="cell-3"></td>
+      </tr>
+      <tr>
+        <td class="cell" id="cell-4"></td>
+        <td class="cell" id="cell-5"></td>
+        <td class="cell" id="cell-6"></td>
+      </tr>
+      <tr>
+        <td class="cell" id="cell-7"></td>
+        <td class="cell" id="cell-8"></td>
+        <td class="cell" id="cell-9"></td>
+      </tr>
+    </table>
+    <div class="scoreboard">
+      <div class="player player-current">
+        Current player : <span class="x">x</span>
+      </div>
+      <div class="player player-x">
+        <span class="player-info name">Player X</span>
+        :
+        <span class="player-info score x">0</span>
+      </div>
+      <div class="player player-o">
+        <span class="player-info name">Player O</span>
+        :
+        <span class="player-info score o">0</span>
+      </div>
+      <br>
+      <button class="reset">Reset</button>
+    </div>
   </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
