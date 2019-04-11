@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Sum time intervals</title>
+</head>
+<body>
+  
+  <!-- Page content ======================================================= -->
+  <div class="container-fluid">
+    <h1>Sum time intervals</h1>
+    <!-- Description -->
+    <div class="card card-body bg-light my-4">
+      This tool sums multiple time intervals for you. It works only with hours,
+      minutes and seconds. Click on the example buttons to check how it works.
+      You can also split time intervals in blocks and calculate both partial and
+      total sums simultaneously.
+    </div>
+    <form id="app-form">
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
+            <label for="app-input-text">Time intervals</label>
+            <textarea
+              class="form-control"
+              id="app-input-text"
+              rows="10"
+              placeholder="Time intervals, one per line (ex.: 01:02:03)..."
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <!-- Unit delimiter -->
+          <div class="form-group">
+            <label for="app-input-unit-delimiter">Unit delimiter</label>
+            <input
+              type="text"
+              class="form-control"
+              id="app-input-unit-delimiter"
+              placeholder="Time unit delimiter..."
+            >
+          </div>
+          <!-- Block delimiter -->
+          <div class="form-group">
+            <label for="app-input-block-delimiter">Block delimiter</label>
+            <input
+              type="text"
+              class="form-control"
+              id="app-input-block-delimiter"
+              placeholder="Time block delimiter..."
+            >
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg"
+              id="app-button-calculate"
+            >
+              Calculate
+            </button>
+            <!-- Reset -->
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              id="app-button-reset"
+            >
+              Reset
+            </button>
+            <!-- Example -->
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              id="app-button-example-1"
+            >
+              Ex #1
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              id="app-button-example-2"
+            >
+              Ex #2
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!-- Result -->
+    <div class="card card-body bg-light d-none" id="app-result"></div>
+  </div>
+  <!-- /Page content ====================================================== -->
+
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+
+</body>
+</html>
