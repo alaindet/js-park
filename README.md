@@ -20,6 +20,4 @@ This repository is a JavaScript playground to test new ES6+ features, compare sp
 
 - **Media Ponderata**: _(italian)_ Universitari di tutta Italia, questo è per voi! Questa app permette il calcolo della propria media ponderata conoscendo solo la vecchia media, i CFU accumulati fino a quel momento e il peso in CFU del nuovo esame che state per dare. Restituisce una panoramica completa di come può variare la vostra media in base al voto del prossimo esame (da 18 a 30). Codepen.io [https://codepen.io/alaindet/pen/RgmePX](https://codepen.io/alaindet/pen/RgmePX)
 
-- **Sum time intervals**: written in jQuery and Bootstrap 4, it lets the user sum time intervals via a simple interface. Sum any combination of hours, minutes and seconds with a customizable syntax and explorable examples. You can calculate partial and total sums at the same time (see example).
-
-https://codepen.io/alaindet/full/vMxzOj
+- **Sum time intervals**: written in jQuery and Bootstrap 4, it lets the user sum time intervals via a simple interface. Sum any combination of hours, minutes and seconds with a customizable syntax and explorable examples. You can calculate partial and total sums at the same time (see example). Codepen.io [https://codepen.io/alaindet/full/vMxzOj](https://codepen.io/alaindet/full/vMxzOj)
