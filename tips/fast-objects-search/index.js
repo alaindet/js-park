@@ -2,21 +2,25 @@
  * This text compares "full text searches" of an array of simple objects. Test
  * cases are
  * 
- * 1. Flat map + find
+ * 1. Flat map + findIndex
  * Generates a flat, lowercase-only array of strings first, then uses the
- * Array.prototype.find method
+ * Array.prototype.findIndex method
  * 
- * 2. Find on pre-existing flat map
- * Uses Array.prototype.find on a pre-existing flat map
+ * 2. Pre-existing flat map + findIndex
+ * Uses Array.prototype.findIndex on a pre-existing flat map
  * 
- * 3. Plain find
- * Skips generating any auxiliary flat array and uses Array.prototype.find
- * straight away
+ * 3. On demand flattening + findIndex
+ * Flattens current row only then applies Array.prototype.findIndex
+ * 
+ * 4. Plain find
+ * Skips generating any auxiliary flat string or array and uses
+ * Array.prototype.findIndex straight away
  * 
  * Results (02/08/2020 07:04)
- * Test #1 (Lowercase flat map + find): 67624.055ms
- * Test #2 (Existing flat map + find): 66729.672ms
- * Test #3 (Plain find): 29760.247ms
+ * Test #1 (Lowercase flat map + findIndex): 67030.046ms
+ * Test #2 (Existing flat map + findIndex): 66141.930ms
+ * Test #3 (On demand flattening + findIndex): 413125.750ms
+ * Test #4 (Plain findIndex): 28659.449ms
  */
 
 const faker = require('faker');
@@ -50,7 +54,7 @@ for (let j = 0; j < SEARCH_COUNT; j++) {
 }
 
 // Test 1: Using a lowercase flat map + find ----------------------------------
-const test1_label = 'Test #1 (Lowercase flat map + find)';
+const test1_label = 'Test #1 (Lowercase flat map + findIndex)';
 
 console.time(test1_label);
 
@@ -71,7 +75,7 @@ for (const search of searches) {
 console.timeEnd(test1_label);
 
 // Test 2: Using find on existing flat map ------------------------------------
-const test2_label = 'Test #2 (Existing flat map + find)';
+const test2_label = 'Test #2 (Existing flat map + findIndex)';
 
 console.time(test2_label);
 
@@ -83,10 +87,30 @@ for (const search of searches) {
 
 console.timeEnd(test2_label);
 
-// Test 3: Using only find ----------------------------------------------------
-const test3_label = 'Test #3 (Plain find)';
+// Test 3: On demand flattening + find ----------------------------------------
+const test3_label = 'Test #3 (On demand flattening + findIndex)';
 
 console.time(test3_label);
+
+for (const search of searches) {
+  const index = data.findIndex(item => {
+
+    let flatItem = '';
+    for (const key in item) {
+      flatItem += item[key].toLowerCase();
+    }
+
+    return flatItem.indexOf(search) !== -1;
+  });
+}
+
+console.timeEnd(test3_label);
+
+
+// Test 4: Using only find ----------------------------------------------------
+const test4_label = 'Test #4 (Plain findIndex)';
+
+console.time(test4_label);
 
 for (const search of searches) {
   const index = data.findIndex(item => {
@@ -101,4 +125,4 @@ for (const search of searches) {
   });
 }
 
-console.timeEnd(test3_label);
+console.timeEnd(test4_label);
