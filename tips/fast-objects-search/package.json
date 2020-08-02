@@ -1,0 +1,23 @@
+{
+  "name": "fast-objects-search",
+  "version": "1.0.0",
+  "description": "This repository is a JavaScript playground to test new ES6+ features, compare speed and so on. Every result here is subjective to my machine and could change if run on yours.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alaindet/javascript-playground.git"
+  },
+  "author": "Alain D'Ettorre <alain.det@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alaindet/javascript-playground/issues"
+  },
+  "homepage": "https://github.com/alaindet/javascript-playground#readme",
+  "dependencies": {
+    "faker": "^4.1.0"
+  }
+}
