@@ -1,7 +1,7 @@
 {
-  "name": "fast-objects-search",
+  "name": "alaindet_javascript-playground_experiments_objects-search",
   "version": "1.0.0",
-  "description": "This repository is a JavaScript playground to test new ES6+ features, compare speed and so on. Every result here is subjective to my machine and could change if run on yours.",
+  "description": "I compared several search methods for large arrays of simple objects",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

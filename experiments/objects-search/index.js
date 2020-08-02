@@ -1,5 +1,5 @@
 /*
- * This text compares "full text searches" of an array of simple objects. Test
+ * This script compares searches mechanisms in an array of simple objects. Test
  * cases are
  * 
  * 1. Flat map + findIndex
@@ -16,7 +16,7 @@
  * Skips generating any auxiliary flat string or array and uses
  * Array.prototype.findIndex straight away
  * 
- * Results (02/08/2020 07:04)
+ * Results (02/08/2020 08:01)
  * Test #1 (Lowercase flat map + findIndex): 67030.046ms
  * Test #2 (Existing flat map + findIndex): 66141.930ms
  * Test #3 (On demand flattening + findIndex): 413125.750ms
