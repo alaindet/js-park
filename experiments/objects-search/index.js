@@ -16,16 +16,16 @@
  * Skips generating any auxiliary flat string or array and uses
  * Array.prototype.findIndex straight away
  * 
- * Results (02/08/2020 08:01)
- * Test #1 (Lowercase flat map + findIndex): 67030.046ms
- * Test #2 (Existing flat map + findIndex): 66141.930ms
- * Test #3 (On demand flattening + findIndex): 413125.750ms
- * Test #4 (Plain findIndex): 28659.449ms
+ * Results (03/08/2020 23:20)
+ * Test #1 (Lowercase flat map + findIndex): 2587.260ms
+ * Test #2 (Existing flat map + findIndex): 2450.808ms
+ * Test #3 (On demand flattening + findIndex): 11542.031ms
+ * Test #4 (Plain findIndex): 8411.974ms
  */
 
 const faker = require('faker');
 
-const ITEMS_COUNT = 100 * 100 * 10;
+const ITEMS_COUNT = 100 * 100 * 100;
 const SEARCH_COUNT = 100 * 100;
 
 // Setup ----------------------------------------------------------------------
@@ -50,7 +50,7 @@ for (let j = 0; j < SEARCH_COUNT; j++) {
   const index = myRandInt(0, ITEMS_COUNT - 1);
   const key = myRandInt(0, keys.length - 1);
   const search = data[index][keys[key]];
-  searches = [...searches, search];
+  searches = [...searches, search.toLowerCase()];
 }
 
 // Test 1: Using a lowercase flat map + find ----------------------------------
@@ -97,10 +97,10 @@ for (const search of searches) {
 
     let flatItem = '';
     for (const key in item) {
-      flatItem += item[key].toLowerCase();
+      flatItem += item[key];
     }
 
-    return flatItem.indexOf(search) !== -1;
+    return flatItem.toLowerCase().indexOf(search) !== -1;
   });
 }
 
@@ -116,7 +116,7 @@ for (const search of searches) {
   const index = data.findIndex(item => {
 
     for (const key in item) {
-      if (item[key].indexOf(search) !== -1) {
+      if (item[key].toLowerCase().indexOf(search.toLowerCase()) !== -1) {
         return true;
       }
     }
