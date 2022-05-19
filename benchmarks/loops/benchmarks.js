@@ -66,8 +66,6 @@ const BENCHMARKS = [
   }]
 ];
 
-const RESULT = [];
-
 const getBenchmarkArray = () => new Array(BENCHMARK_SIZE).fill(BENCHMARK_DEFAULT);
 
 const normalizeResults = rawResults => {
