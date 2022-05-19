@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Loops Benchmarks</title>
+  <style>
+    body {
+      font-size: 18px;
+      font-family: sans-serif;
+    }
+    button {
+      padding: 1rem 1.5rem;
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="btn-run">Run!</button>
+  <div id="results"></div>
+
+  <script src="benchmarks.js"></script>
+  <script>
+    const buttonEl = document.querySelector('#btn-run');
+    const resultsEl = document.querySelector('#results');
+
+    buttonEl.addEventListener('click', () => {
+
+      resultsEl.innerHTML = '<p>Loading...</p>';
+
+      // runBenchmarks and BENCHMARKS are declared in benchmarks.js
+      (async () => {
+        const timer = () => performance.now();
+        const RESULTS = await runBenchmarks(timer, BENCHMARKS);
+
+        const html = RESULTS.reduce((html, result) => {
+          return html += (
+            `<li>` +
+              `<strong>${result.name}</strong>` +
+              ` ${result.score.toFixed(0)}%` +
+              ` (${result.time.toFixed(4)}ms)` +
+            `</li>`
+          );
+        }, '');
+
+        resultsEl.innerHTML = `<ol>${html}</ol>`;
+      })();
+    });
+  </script>
+</body>
+</html>
