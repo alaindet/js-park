@@ -18,6 +18,6 @@ This repository contains JavaScript and TypeScript benchmarks, utilities, tips a
 - `rot13`: Simple cipher used in forums [https://it.wikipedia.org/wiki/ROT13](https://it.wikipedia.org/wiki/ROT13)
 - `ranges`: It's a bummer something like `const nums = range(2, 42);` does not exist in JavaScript. Now it does.
 
-###Benchmarks
+### Benchmarks
 - `loops`: Comparison between different kind of loops (TL;DR: classic `for` wins, `for..of` is slower, `for..in` is slowest)
 - `objects-search`: Comparison of several search methods for large arrays of simple objects
