@@ -8,6 +8,7 @@ This repository contains JavaScript and TypeScript benchmarks, utilities, tips a
 - `rotate2d`: Functions to rotate a 2d-array clock-wise and counter-clock-wise
 - `days-in-month`: Returns all days in a given month as array of `Date`s
 - `ranges`: TypeScript-equivalent of JavaScript's `ranges` below
+- `2d-movements`: Returns a collection of functions to move on a 2D board represented as a monodimensional array
 
 ## JavaScript
 
