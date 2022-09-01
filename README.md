@@ -10,6 +10,9 @@ This repository contains JavaScript and TypeScript benchmarks, utilities, tips a
 - `ranges`: TypeScript-equivalent of JavaScript's `ranges` below
 - `2d-movements`: Returns a collection of functions to move on a 2D board represented as a monodimensional array
 
+## Libraries
+- `date-sneaker`: A library to manage calendars (date pickers, month pickers, year pickers)
+
 ## JavaScript
 
 ### Functions
