@@ -1,5 +1,7 @@
 # JavaScript/TypeScript Park
 
+![Go Logo](https://raw.githubusercontent.com/alaindet/js-park/main/js-park-logo.png
+
 This repository contains JavaScript and TypeScript benchmarks, utilities, tips and gotchas I come up with (or find online, with sources wherever possible)
 
 ## TypeScript
