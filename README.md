@@ -1,8 +1,8 @@
 # JavaScript/TypeScript Park
 
-![JS Park Logo](https://raw.githubusercontent.com/alaindet/js-park/main/js-park-logo.png
+![JS Park Logo](https://raw.githubusercontent.com/alaindet/js-park/main/js-park-logo.png)
 
-This repository contains JavaScript and TypeScript benchmarks, utilities, tips and gotchas I come up with (or find online, with sources wherever possible)
+This repository contains JavaScript and TypeScript benchmarks, utilities, tips, experiments, library ideas and gotchas I come up with (or find online, with sources wherever possible). Basically, it's a digital playground so to say.
 
 ## TypeScript
 
@@ -14,6 +14,7 @@ This repository contains JavaScript and TypeScript benchmarks, utilities, tips a
 
 ## Libraries
 - `date-sneaker`: A library to manage calendars (date pickers, month pickers, year pickers)
+- `router`: A simple router class to match a string with patterns
 
 ## JavaScript
 
@@ -27,3 +28,4 @@ This repository contains JavaScript and TypeScript benchmarks, utilities, tips a
 ### Benchmarks
 - `loops`: Comparison between different kind of loops (TL;DR: classic `for` wins, `for..of` is slower, `for..in` is slowest)
 - `objects-search`: Comparison of several search methods for large arrays of simple objects
+- `strings concatentation`: TL;DR: Use `String.concat()`
