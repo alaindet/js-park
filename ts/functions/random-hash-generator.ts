@@ -26,8 +26,9 @@ function createRandomHashGenerator(_config?: RandomHashGeneratorConfig) {
 
   let getRandomLetter = () => ALPHABET[getRandomInteger(0, lastIndex)];
   if (config.withUpperCase) {
+    const getRandomLowercaseLetterGenerator = getRandomLetter;
     getRandomLetter = () => {
-      const letter = getRandomLetter();
+      const letter = getRandomLowercaseLetterGenerator();
       return Math.random() > 0.5 ? letter.toUpperCase() : letter;
     };
   }
