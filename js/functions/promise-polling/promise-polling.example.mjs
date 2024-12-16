@@ -1,30 +1,41 @@
 import { createPolling } from './promise-polling.mjs';
 
 const polling = createPolling({
-  source: () => generateRequest({ delay: 300, errPercentage: 0 }),
+  source: () =>
+    generateFakeRequest({
+      delay: 500,
+      errPercentage: 0.75,
+      okValue: 'yep',
+      errValue: 'nope',
+    }),
   onSuccess: (res, stop) => console.log('onSuccess', res),
   onError: (res, stop) => console.log('onError', res),
   onComplete: (stop) => console.log('onComplete'),
-  interval: 500,
+  interval: 550,
   maxTimeouts: 5,
-  autoStart: true,
+  immediate: true,
 });
 
-setTimeout(() => {
-  console.log('Stopping polling after 4 seconds...');
-  polling.stop();
-}, 4_000);
+console.log('Started polling...');
+polling.start();
 
-function generateRequest(config) {
+setTimeout(() => {
+  console.log('Stopped polling after 4 seconds...');
+  polling.stop();
+}, 2_000);
+
+function generateFakeRequest(config) {
   const delay = config?.delay ?? 0;
   const errPercentage = config?.errPercentage ?? 0;
+  const okValue = config?.okValue;
+  const errValue = config?.errValue;
 
   return new Promise((ok, ko) => {
     setTimeout(() => {
       if (Math.random() <= errPercentage) {
-        ko(500);
+        ko(errValue);
       } else {
-        ok(200);
+        ok(okValue);
       }
     }, delay);
   });
