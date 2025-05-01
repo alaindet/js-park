@@ -6,11 +6,12 @@ class LinkedListNode {
 }
 
 /**
- * This queue is implemented via linked lists. It required more code, but it's
- * faster than the implementation via an array
+ * This queue is implemented via linked lists. This is generally the best
+ * implementation. The array-based implementations are only faster when enqueueing
+ * since Array.prototype.push is easier to do than instantiating a new node
+ * and update the tail of the list
  */
 export class LinkedListQueue {
-  
   constructor() {
     this.head = null;
     this.tail = null;

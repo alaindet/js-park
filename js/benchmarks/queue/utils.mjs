@@ -21,17 +21,38 @@ export function compareBenchmarks(benchmarks) {
     })
     .sort((a, b) => a.normalizedTiming - b.normalizedTiming);
 
-  const best = normalizedTimings.shift();
-  console.log(`${best.name}\t${best.timing.toFixed(3)}ms\t1x`);
-
-  normalizedTimings.forEach(t => {
-    const slowerTime = t.normalizedTiming.toFixed(2) + 'x';
-    console.log(`${t.name}\t${t.timing.toFixed(3)}ms\t${slowerTime}`);
-  });
+  console.table(
+    normalizedTimings.map(nt => ({
+      name: nt.name,
+      timing: nt.timing.toFixed(4) + 'ms',
+      normalizedTiming: nt.normalizedTiming.toFixed(2) + 'x',
+    }))
+  );
 }
 
 function timeIt(fn) {
   const start = performance.now();
   fn();
   return performance.now() - start;
+}
+
+export function createBenchmark(name, iterations, fn) {
+  return {
+    name,
+    benchmark: () => {
+      for (let i = 0; i < iterations; i++) {
+        fn(i);
+      }
+    },
+  };
+}
+
+export function range(sup) {
+  const result = [];
+
+  for (let i = 0; i < sup; i++) {
+    result.push(i);
+  }
+
+  return result;
 }

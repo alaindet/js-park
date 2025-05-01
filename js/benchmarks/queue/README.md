@@ -1,6 +1,6 @@
 # Queue
 
 ```bash
-node ./benchmark.mjs
-node --watch ./benchmark.mjs
+node ./benchmarks.mjs
+node --watch ./benchmarks.mjs
 ```

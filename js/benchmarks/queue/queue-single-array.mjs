@@ -1,8 +1,9 @@
 /**
- * This implementation is easy, but dequeue is slow since Array.prototype.shift
- * moves all the elements of the array each time
+ * This implementation is easy, but dequeueing is very slow since
+ * Array.prototype.shift moves all the elements of the array each time before
+ * shifting (removing the oldest element)
  */
-export class ArrayQueue {
+export class SingleArrayQueue {
   constructor() {
     this.elements = [];
   }
