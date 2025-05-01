@@ -10,9 +10,10 @@ class LinkedListNode {
  * faster than the implementation via an array
  */
 export class LinkedListQueue {
+  
   constructor() {
-    this.front = null;
-    this.rear = null;
+    this.head = null;
+    this.tail = null;
     this._size = 0;
   }
 
@@ -20,11 +21,11 @@ export class LinkedListQueue {
     const newNode = new LinkedListNode(data);
 
     if (this.isEmpty()) {
-      this.front = newNode;
-      this.rear = newNode;
+      this.head = newNode;
+      this.tail = newNode;
     } else {
-      this.rear.next = newNode;
-      this.rear = newNode;
+      this.tail.next = newNode;
+      this.tail = newNode;
     }
 
     this._size++;
@@ -35,11 +36,11 @@ export class LinkedListQueue {
       return null;
     }
 
-    const dequeuedNode = this.front;
-    this.front = this.front.next;
+    const dequeuedNode = this.head;
+    this.head = this.head.next;
 
-    if (this.front === null) {
-      this.rear = null;
+    if (this.head === null) {
+      this.tail = null;
     }
 
     this._size--;
@@ -51,7 +52,7 @@ export class LinkedListQueue {
       return null;
     }
 
-    return this.front.data;
+    return this.head.data;
   }
 
   size() {

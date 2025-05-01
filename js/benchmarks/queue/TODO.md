@@ -1,1 +1,0 @@
-- [ ] Add an implementation with double arrays
